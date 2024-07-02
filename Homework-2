@@ -1,0 +1,126 @@
+Task 1.
+
+// Create a function which takes two strings (p1 and p2  — which represent player 1 and 2) as 
+// arguments and returns a string stating the winner in a game of Rock, Paper, Scissors. 
+// Each argument will contain a single string: "Rock", "Paper", or "Scissors". Return the 
+// winner according to the following rules: 
+ 
+// Note: 
+// ● Rock beats Scissors 
+// ● Scissors beats Paper 
+// ● Paper beats Rock 
+ 
+// If p1 wins, return the string "The winner is p1". If p2 wins, return the string "The 
+// winner is p2" and if p1 and p2 are the same, return "It's a draw".
+
+//Solution
+
+function rps (p1, p2) {
+    if (p1 === p2) {
+        return "It's a draw";
+    } else if (p1 === 'Rock' && p2 === 'Scissors') {
+        return "The winner is p1";
+    } else if (p1 === 'Scissors' && p2 === 'Paper') {
+        return "The winner is p1";
+    } else if (p1 === 'Paper' && p2 === 'Rock') {
+        return "The winner is p1";
+    } else {
+        return "The winner is p2";
+    }
+}
+
+Task 2.
+
+//  Calculator 
+// Build a simple calculator that performs basic arithmetic operations (+, -, *, /) based on user input. Use 
+// coercion to handle different types of inputs. 
+// Write a function calculator(a, b, operator) that takes two operands (a and b) and an operator 
+// ('+', '-', '*', '/'). The operands can be either numbers or strings representing numbers. The function 
+// should perform the operation and return the result.
+
+//Solution
+
+function calculator(a, b, operator) {
+    a = +a;
+    b = +b;
+    
+    switch (operator) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            return  b !== 0 ? a / b : 'Error: Division by zero ';
+    }
+}
+
+Task 3. 
+
+//Write a function convertTemperature(value, scale) that converts the temperature value to 
+// the specified scale ('C' for Celsius, 'F' for Fahrenheit). The input value can be a string or a number.
+
+//Solution
+
+function convertTemperature (value, scale) {
+    if (scale === 'C') {
+        return (value - 32) * 5 / 9;
+    }    else if (scale === 'F') {
+        return (value * 9 / 5) + 32;
+    }
+}
+
+Task 4.
+
+// Age Verification 
+// Write a function isAdult(age) that takes an age as input and returns true if the user is an adult and 
+// false otherwise. The input age can be a string or a number.
+
+//Solution
+
+function isAdult(age) {
+    age = +age;
+    if (isNaN (age)) {
+        return 'Invalid input: Age must be a number.' 
+    }
+    return age >= 18 
+}
+
+Task 5.
+
+// BMI Calculator 
+// Write a function calculateBMI(weight, height) that takes weight (in kg) and height (in meters). 
+// The input values can be strings or numbers. Return the BMI.
+
+//Solution
+
+function calculateBMI (weight, height) {
+    weight = +weight;
+    height = +height;
+    if (isNaN(weight) || weight <= 0) {
+        return 'Invalid input: Weight must be a positive number.' 
+    }
+    if (isNaN(height) || height <= 0) {
+        return 'Invalid input: Height must be a positive number.' 
+    }
+    return weight / (height * height);
+}
+
+Task 6.
+
+// Discount Calculator 
+// Write a function calculateDiscount(price, discount) that takes a price and a discount 
+// percentage. The input values can be strings or numbers. Return the final price after applying the 
+// discount.
+
+//Solution
+
+function calculateDiscount (price, discount) {
+    price = +price;
+    discount = +discount
+    if (isNaN(price) || isNaN(discount) || discount < 0 || discount > 100) {
+        return 'Invalid input: Price and discount must be valid numbers, and discount must be between 0 and 100'
+    }
+    return price - price * (discount / 100)
+}
