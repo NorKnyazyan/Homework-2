@@ -19,6 +19,12 @@ function checkAge(age) {
     }
 }
 
+// With ternary operators
+
+function checkAge(age) {
+    return age < 13 ? 'Child' :age >= 13 && age <= 19 ? 'Teen' : age >= 20 && age <= 59 ? 'Adult' : 'Senior';
+}
+
 Task 2. 
 
 // What will be logged and explain why
