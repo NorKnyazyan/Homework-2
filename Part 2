@@ -1,0 +1,84 @@
+Task 1.
+
+// Write a function checkAge that takes a person's age and returns using Ternary Operator: 
+// • "Child" if the age is less than 13 
+// • "Teen" if the age is between 13 and 19 
+// • "Adult" if the age is between 20 and 59 
+// • "Senior" if the age is 60 or above 
+
+function checkAge(age) {
+    switch (true) {
+        case (age < 13):
+            return 'Child';
+        case (age >= 13 && age <= 19):
+            return 'Teen';
+        case (age >= 20 && age <= 59):
+            return 'Adult';
+        case (age >= 60):
+            return 'Senior';
+    }
+}
+
+Task 2. 
+
+// What will be logged and explain why
+
+const a = 5;
+const b = 10;
+const c = 15;
+const result = a < b && b < c ? '1' : a > b && b > c ? '2' : '3'
+console.log(result);
+
+qani vor && operator@ veradardznuma arajin handipac truthy arjeq, isk a < b && b < c truthy en, result popoxakanin veragrveluya '1'. es arjeqneri depqum kod@ araj el chi gnalu
+
+Task 3
+
+// What will be logged and explain why
+
+const hasID = true;
+const over18 = false;
+const canEnterClub = hasID && over18 || !hasID
+console.log(canEnterClub);
+
+es case_um arajin qayli jamanak && operator@ mez het kta arajin handipac truthy arjeq - (hasID = true) 
+hajord qaylin sksveluya stugum hasId ev !hasId mijev, qani vor || operator@ veradardznuma arajin falsy handipac arjeq, is kamic aj unenq ! operator, vor@ stanuma arjeq (kam true, kam false) ev arjeq@ poxuma hakarakov (!hasId = false)
+amena verjum kstananq canEnterClub = false
+
+Task 4
+
+// What will be logged and explain why
+
+const x = 10;
+const y = 20;
+const z = 30;
+let condition = (x < y && y < z) || (x > y && y > z)
+console.log(condition);
+
+qani vor erku koxmic pakagcer kan, kod@ kardaluya dzaxic aj
+
+(x < y && y < z) kveradarzni true
+(x > y && y > z) kveradardzni false
+condition = true || false kveradardzni true
+
+Task 5
+
+// What will be logged and explain why
+
+const num = 30;
+const boolean = false;
+const result = num < 18 ? '1' : boolean && num >= 18 && num <= 65 ? '2' : '3'
+console.log(result);
+
+qani vor num < 18 false kta, kod@ ancnuma hajord masin qani vor 'boolean' = false -  boolean && num >= 18 && num <= 65 nuynpes klini false
+verjum mez het kta '3'
+result = 3
+
+Task 6
+
+const a = 5, b = 10, c = 15;
+const result = a > b && b < c || a < c && b > a
+console.log(result);
+
+qani vor  'a > b' falsy_a  lriv  'a > b && b < c'  ktor@ klini falsy, isk  'a < c && b > a' truthy_a qani vor ham 'a < c' true, ham 'b > a' true (&& operator@ veradardzneluya true es depqum)
+false || true mez kta true
+result = true
